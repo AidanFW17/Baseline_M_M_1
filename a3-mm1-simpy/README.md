@@ -63,7 +63,25 @@ Semua hasil disimpan di folder `results/replications/`:
 3. **all_replications.json** - Data lengkap dalam format JSON
 4. **statistics.txt** - Statistik agregat (mean, std, min, max, median)
 5. **analysis.png** - Visualisasi box plot, histogram, dan line plot untuk setiap KPI
-6. **confidence_intervals.png** - 95% confidence intervals untuk setiap KPI
+6. **confidence_intervals.png** - 95% confidence intervals untuk setiap KPI (dari replications.py)
+7. **confidence_intervals.csv** - Tabel confidence intervals dengan detail kalkulasi
+8. **confidence_interval_report.txt** - Laporan lengkap metodologi dan hasil CI
+9. **ci_visualization.png** - Visualisasi CI dengan nilai teoretis
+
+### Cara Menghitung Confidence Interval
+```bash
+cd a3-mm1-simpy
+python confidence_interval.py
+```
+
+Script ini menghitung 95% CI menggunakan t-distribution dengan formula:
+```
+CI = x̄ ± t(α/2, df) × SE
+dimana:
+  x̄  = sample mean
+  t  = t-critical value (2.045 untuk df=29, α=0.05)
+  SE = standard error = s / √n
+```
 
 ## Key Performance Indicators (KPI)
 
@@ -151,6 +169,25 @@ Hasil simulasi menunjukkan performa sistem antrian M/M/1 dengan utilization 83.3
 | W (Avg System Time) | 4.75 | 1.68 | 2.69 | 8.72 | 4.14 |
 | Lq (Avg Queue Length) | 3.91 | 1.65 | 1.90 | 7.78 | 3.30 |
 | L (Avg System Length) | 4.75 | 1.68 | 2.69 | 8.72 | 4.14 |
+
+### Confidence Interval 95%
+
+Menggunakan t-distribution (n=30, df=29, t-critical=2.045):
+
+| Metric | Mean | 95% CI | Theoretical |
+|--------|------|--------|-------------|
+| Wq (Avg Wait Time) | 3.9119 | [3.2942, 4.5297] | 4.1667 ✓ |
+| W (Avg System Time) | 4.7539 | [4.1276, 5.3802] | 5.0000 ✓ |
+| Lq (Avg Queue Length) | 3.9119 | [3.2942, 4.5297] | 4.1667 ✓ |
+| L (Avg System Length) | 4.7539 | [4.1276, 5.3802] | 5.0000 ✓ |
+
+**Format Ilmiah:**
+- **Wq**: Mean = 3.9119, 95% CI: [3.2942, 4.5297]
+- **W**: Mean = 4.7539, 95% CI: [4.1276, 5.3802]
+- **Lq**: Mean = 3.9119, 95% CI: [3.2942, 4.5297]
+- **L**: Mean = 4.7539, 95% CI: [4.1276, 5.3802]
+
+✓ Semua nilai teoretis berada dalam 95% CI, memvalidasi model simulasi secara statistik.
 
 ### Interpretasi Hasil Replikasi
 

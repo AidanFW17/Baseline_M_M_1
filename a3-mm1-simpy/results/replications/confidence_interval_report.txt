@@ -1,0 +1,94 @@
+================================================================================
+LAPORAN CONFIDENCE INTERVAL 95%
+Simulasi Antrian M/M/1 - 30 Replikasi
+================================================================================
+
+METODOLOGI
+--------------------------------------------------------------------------------
+Confidence Interval dihitung menggunakan t-distribution karena:
+  - Sample size (n=30) relatif kecil
+  - Population standard deviation tidak diketahui
+  - Menggunakan sample standard deviation sebagai estimator
+
+Formula:
+  CI = x̄ ± t(α/2, df) × SE
+  dimana:
+    x̄  = sample mean
+    t  = t-critical value (two-tailed, α=0.05, df=29)
+    SE = standard error = s / √n
+    s  = sample standard deviation
+    n  = sample size (30)
+    df = degrees of freedom = n - 1 = 29
+
+================================================================================
+HASIL KALKULASI
+================================================================================
+
+Wq (Avg Wait Time)
+--------------------------------------------------------------------------------
+  Sample Size (n)           : 30
+  Mean (x̄)                  : 3.911923
+  Standard Deviation (s)    : 1.654318
+  Standard Error (SE)       : 0.302036
+  t-critical (α=0.05, df=29): 2.045230
+  Margin of Error (ME)      : 0.617733
+  95% CI                    : [3.294190, 4.529656]
+  CI Width                  : 1.235465
+
+W (Avg System Time)
+--------------------------------------------------------------------------------
+  Sample Size (n)           : 30
+  Mean (x̄)                  : 4.753872
+  Standard Deviation (s)    : 1.677222
+  Standard Error (SE)       : 0.306217
+  t-critical (α=0.05, df=29): 2.045230
+  Margin of Error (ME)      : 0.626285
+  95% CI                    : [4.127587, 5.380157]
+  CI Width                  : 1.252570
+
+Lq (Avg Queue Length)
+--------------------------------------------------------------------------------
+  Sample Size (n)           : 30
+  Mean (x̄)                  : 3.911923
+  Standard Deviation (s)    : 1.654318
+  Standard Error (SE)       : 0.302036
+  t-critical (α=0.05, df=29): 2.045230
+  Margin of Error (ME)      : 0.617733
+  95% CI                    : [3.294190, 4.529656]
+  CI Width                  : 1.235465
+
+L (Avg System Length)
+--------------------------------------------------------------------------------
+  Sample Size (n)           : 30
+  Mean (x̄)                  : 4.753872
+  Standard Deviation (s)    : 1.677222
+  Standard Error (SE)       : 0.306217
+  t-critical (α=0.05, df=29): 2.045230
+  Margin of Error (ME)      : 0.626285
+  95% CI                    : [4.127587, 5.380157]
+  CI Width                  : 1.252570
+
+================================================================================
+INTERPRETASI
+================================================================================
+
+Confidence Interval 95% berarti:
+  Jika kita mengulangi eksperimen ini berkali-kali dan menghitung CI
+  untuk setiap eksperimen, maka 95% dari CI tersebut akan mengandung
+  true population mean.
+
+Validasi dengan Nilai Teoretis:
+  Theoretical Wq (M/M/1) = 4.1667
+  ✓ Nilai teoretis BERADA DALAM 95% CI [3.2942, 4.5297]
+  ✓ Model simulasi VALID secara statistik
+
+================================================================================
+RINGKASAN FORMAT ILMIAH
+================================================================================
+
+Wq                       : Mean = 3.9119, 95% CI: [3.2942, 4.5297]
+W                        : Mean = 4.7539, 95% CI: [4.1276, 5.3802]
+Lq                       : Mean = 3.9119, 95% CI: [3.2942, 4.5297]
+L                        : Mean = 4.7539, 95% CI: [4.1276, 5.3802]
+
+================================================================================
