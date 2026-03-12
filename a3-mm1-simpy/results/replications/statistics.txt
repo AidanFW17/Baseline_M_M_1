@@ -1,0 +1,17 @@
+======================================================================
+STATISTIK AGREGAT DARI 30 REPLIKASI
+Simulasi Antrian M/M/1
+======================================================================
+
+Jumlah Replikasi: 30
+Jumlah Customer per Replikasi: 500
+Arrival Rate (λ): 1.0
+Service Rate (μ): 1.2
+
+        Wq (Avg Wait Time)  W (Avg System Time)  Lq (Avg Queue Length)  L (Avg System Length)
+mean              3.911923             4.753872               3.911923               4.753872
+std               1.654318             1.677222               1.654318               1.677222
+min               1.899289             2.692596               1.899289               2.692596
+max               7.782067             8.718262               7.782067               8.718262
+median            3.296257             4.138217               3.296257               4.138217
+======================================================================

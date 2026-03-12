@@ -32,18 +32,38 @@ pip install simpy pandas matplotlib
 
 ## Cara Menjalankan
 
+### Simulasi Tunggal
 ```bash
 cd a3-mm1-simpy
 python main.py
 ```
 
+### 30 Replikasi Otomatis
+```bash
+cd a3-mm1-simpy
+python replications.py
+```
+
+Script `replications.py` akan menjalankan 30 replikasi dengan seed berbeda (42-71) dan menghasilkan analisis statistik lengkap.
+
 ## Output
 
+### Simulasi Tunggal
 Semua hasil disimpan di folder `results/`:
 
 1. **log.csv** - Log semua event (arrive, start, depart) untuk setiap customer
 2. **kpi.txt** - Ringkasan KPI dan perbandingan dengan nilai teoretis
 3. **wq_hist.png** - Histogram distribusi waiting time
+
+### 30 Replikasi
+Semua hasil disimpan di folder `results/replications/`:
+
+1. **log_rep_01.csv sampai log_rep_30.csv** - Event log untuk setiap replikasi
+2. **kpi_summary.csv** - Ringkasan KPI dari semua 30 replikasi
+3. **all_replications.json** - Data lengkap dalam format JSON
+4. **statistics.txt** - Statistik agregat (mean, std, min, max, median)
+5. **analysis.png** - Visualisasi box plot, histogram, dan line plot untuk setiap KPI
+6. **confidence_intervals.png** - 95% confidence intervals untuk setiap KPI
 
 ## Key Performance Indicators (KPI)
 
@@ -121,6 +141,21 @@ L (theory): 5.0000
 
 Hasil simulasi menunjukkan performa sistem antrian M/M/1 dengan utilization 83.3% (ρ = 0.833). Rata-rata waktu tunggu customer di antrian (Wq) adalah 7.78 unit waktu, yang berarti setiap customer harus menunggu hampir 8 unit waktu sebelum dilayani. Total waktu yang dihabiskan customer di sistem (W) mencapai 8.72 unit waktu, yang mencakup waktu tunggu dan waktu layanan. Panjang antrian rata-rata (Lq) sebesar 7.78 customer menunjukkan bahwa sistem cukup sibuk dengan antrian yang panjang. Jumlah rata-rata customer di sistem (L) adalah 8.72, yang berarti pada setiap waktu terdapat sekitar 8-9 customer baik yang sedang menunggu maupun dilayani. Nilai simulasi yang lebih tinggi dari teoretis menunjukkan variabilitas alami dalam sistem stokastik, namun masih dalam rentang yang wajar dan memvalidasi model simulasi.
 
+## Hasil 30 Replikasi
+
+### Statistik Agregat
+
+| Metric | Mean | Std Dev | Min | Max | Median |
+|--------|------|---------|-----|-----|--------|
+| Wq (Avg Wait Time) | 3.91 | 1.65 | 1.90 | 7.78 | 3.30 |
+| W (Avg System Time) | 4.75 | 1.68 | 2.69 | 8.72 | 4.14 |
+| Lq (Avg Queue Length) | 3.91 | 1.65 | 1.90 | 7.78 | 3.30 |
+| L (Avg System Length) | 4.75 | 1.68 | 2.69 | 8.72 | 4.14 |
+
+### Interpretasi Hasil Replikasi
+
+Dari 30 replikasi dengan seed berbeda, diperoleh rata-rata waktu tunggu (Wq) sebesar 3.91 unit waktu dengan standar deviasi 1.65, menunjukkan variabilitas yang cukup signifikan antar replikasi. Nilai mean ini lebih mendekati nilai teoretis (4.17) dibandingkan hasil simulasi tunggal, membuktikan bahwa multiple replications memberikan estimasi yang lebih akurat. Standar deviasi yang relatif besar mengindikasikan bahwa performa sistem sangat sensitif terhadap pola kedatangan dan layanan yang random. Range nilai dari minimum 1.90 hingga maximum 7.78 menunjukkan bahwa dalam kondisi tertentu, sistem bisa sangat efisien atau sebaliknya sangat terbebani. Median yang lebih rendah dari mean (3.30 vs 3.91) mengindikasikan distribusi yang right-skewed, artinya ada beberapa replikasi dengan nilai ekstrem tinggi yang menarik rata-rata ke atas. Hasil ini menekankan pentingnya menjalankan multiple replications untuk mendapatkan gambaran yang komprehensif tentang performa sistem.
+
 ## Penjelasan Kode
 
 ### main.py
@@ -132,6 +167,12 @@ Hasil simulasi menunjukkan performa sistem antrian M/M/1 dengan utilization 83.3
 ### metrics.py
 - `calculate_kpi()`: Menghitung 4 KPI dari event log
 - `save_kpi_to_file()`: Menyimpan KPI ke file txt dengan format rapi
+
+### replications.py
+- `run_single_replication()`: Menjalankan satu replikasi dengan seed spesifik
+- `run_all_replications()`: Loop untuk menjalankan 30 replikasi
+- `create_visualizations()`: Membuat box plot, histogram, line plot, dan confidence intervals
+- Menyimpan hasil dalam struktur data terorganisir (CSV, JSON, TXT, PNG)
 
 ## Lisensi
 

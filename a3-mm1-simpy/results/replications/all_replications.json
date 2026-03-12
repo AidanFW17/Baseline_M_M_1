@@ -1,0 +1,344 @@
+{
+  "metadata": {
+    "num_replications": 30,
+    "num_customers": 500,
+    "arrival_rate": 1.0,
+    "service_rate": 1.2,
+    "base_seed": 42,
+    "timestamp": "2026-03-12 11:34:26"
+  },
+  "replications": [
+    {
+      "replication_id": 1,
+      "seed": 42,
+      "kpi": {
+        "Wq (Avg Wait Time)": 7.782066507512664,
+        "W (Avg System Time)": 8.718262218655003,
+        "Lq (Avg Queue Length)": 7.782066507512664,
+        "L (Avg System Length)": 8.718262218655003
+      }
+    },
+    {
+      "replication_id": 2,
+      "seed": 43,
+      "kpi": {
+        "Wq (Avg Wait Time)": 7.5482309705389365,
+        "W (Avg System Time)": 8.38745141847393,
+        "Lq (Avg Queue Length)": 7.5482309705389365,
+        "L (Avg System Length)": 8.38745141847393
+      }
+    },
+    {
+      "replication_id": 3,
+      "seed": 44,
+      "kpi": {
+        "Wq (Avg Wait Time)": 3.9017340449416507,
+        "W (Avg System Time)": 4.724376201506536,
+        "Lq (Avg Queue Length)": 3.9017340449416507,
+        "L (Avg System Length)": 4.724376201506536
+      }
+    },
+    {
+      "replication_id": 4,
+      "seed": 45,
+      "kpi": {
+        "Wq (Avg Wait Time)": 3.2599651357464774,
+        "W (Avg System Time)": 4.124806361331812,
+        "Lq (Avg Queue Length)": 3.2599651357464774,
+        "L (Avg System Length)": 4.124806361331812
+      }
+    },
+    {
+      "replication_id": 5,
+      "seed": 46,
+      "kpi": {
+        "Wq (Avg Wait Time)": 3.3325481785732554,
+        "W (Avg System Time)": 4.151627298979218,
+        "Lq (Avg Queue Length)": 3.3325481785732554,
+        "L (Avg System Length)": 4.151627298979218
+      }
+    },
+    {
+      "replication_id": 6,
+      "seed": 47,
+      "kpi": {
+        "Wq (Avg Wait Time)": 4.754603942745977,
+        "W (Avg System Time)": 5.594479866780443,
+        "Lq (Avg Queue Length)": 4.754603942745977,
+        "L (Avg System Length)": 5.594479866780443
+      }
+    },
+    {
+      "replication_id": 7,
+      "seed": 48,
+      "kpi": {
+        "Wq (Avg Wait Time)": 3.0858956472612356,
+        "W (Avg System Time)": 3.957148335125154,
+        "Lq (Avg Queue Length)": 3.0858956472612356,
+        "L (Avg System Length)": 3.957148335125154
+      }
+    },
+    {
+      "replication_id": 8,
+      "seed": 49,
+      "kpi": {
+        "Wq (Avg Wait Time)": 2.130476247795372,
+        "W (Avg System Time)": 2.9246360045881965,
+        "Lq (Avg Queue Length)": 2.130476247795372,
+        "L (Avg System Length)": 2.9246360045881965
+      }
+    },
+    {
+      "replication_id": 9,
+      "seed": 50,
+      "kpi": {
+        "Wq (Avg Wait Time)": 3.4056306918973616,
+        "W (Avg System Time)": 4.269640575323186,
+        "Lq (Avg Queue Length)": 3.4056306918973616,
+        "L (Avg System Length)": 4.269640575323186
+      }
+    },
+    {
+      "replication_id": 10,
+      "seed": 51,
+      "kpi": {
+        "Wq (Avg Wait Time)": 4.117405961371327,
+        "W (Avg System Time)": 4.959869385658047,
+        "Lq (Avg Queue Length)": 4.117405961371327,
+        "L (Avg System Length)": 4.959869385658047
+      }
+    },
+    {
+      "replication_id": 11,
+      "seed": 52,
+      "kpi": {
+        "Wq (Avg Wait Time)": 5.8196691073296405,
+        "W (Avg System Time)": 6.702160262785581,
+        "Lq (Avg Queue Length)": 5.8196691073296405,
+        "L (Avg System Length)": 6.702160262785581
+      }
+    },
+    {
+      "replication_id": 12,
+      "seed": 53,
+      "kpi": {
+        "Wq (Avg Wait Time)": 2.164816286140441,
+        "W (Avg System Time)": 2.9766788144017764,
+        "Lq (Avg Queue Length)": 2.164816286140441,
+        "L (Avg System Length)": 2.9766788144017764
+      }
+    },
+    {
+      "replication_id": 13,
+      "seed": 54,
+      "kpi": {
+        "Wq (Avg Wait Time)": 3.7876247405434533,
+        "W (Avg System Time)": 4.659898126597864,
+        "Lq (Avg Queue Length)": 3.7876247405434533,
+        "L (Avg System Length)": 4.659898126597864
+      }
+    },
+    {
+      "replication_id": 14,
+      "seed": 55,
+      "kpi": {
+        "Wq (Avg Wait Time)": 3.167894394113914,
+        "W (Avg System Time)": 4.042165893967735,
+        "Lq (Avg Queue Length)": 3.167894394113914,
+        "L (Avg System Length)": 4.042165893967735
+      }
+    },
+    {
+      "replication_id": 15,
+      "seed": 56,
+      "kpi": {
+        "Wq (Avg Wait Time)": 2.1219883291429817,
+        "W (Avg System Time)": 2.929068598481831,
+        "Lq (Avg Queue Length)": 2.1219883291429817,
+        "L (Avg System Length)": 2.929068598481831
+      }
+    },
+    {
+      "replication_id": 16,
+      "seed": 57,
+      "kpi": {
+        "Wq (Avg Wait Time)": 1.8992893748946722,
+        "W (Avg System Time)": 2.6925963368821844,
+        "Lq (Avg Queue Length)": 1.8992893748946722,
+        "L (Avg System Length)": 2.6925963368821844
+      }
+    },
+    {
+      "replication_id": 17,
+      "seed": 58,
+      "kpi": {
+        "Wq (Avg Wait Time)": 4.8534948361218255,
+        "W (Avg System Time)": 5.729155276718608,
+        "Lq (Avg Queue Length)": 4.8534948361218255,
+        "L (Avg System Length)": 5.729155276718608
+      }
+    },
+    {
+      "replication_id": 18,
+      "seed": 59,
+      "kpi": {
+        "Wq (Avg Wait Time)": 4.335928611861769,
+        "W (Avg System Time)": 5.214157230085992,
+        "Lq (Avg Queue Length)": 4.335928611861769,
+        "L (Avg System Length)": 5.214157230085992
+      }
+    },
+    {
+      "replication_id": 19,
+      "seed": 60,
+      "kpi": {
+        "Wq (Avg Wait Time)": 2.12929826578677,
+        "W (Avg System Time)": 2.9544407349183337,
+        "Lq (Avg Queue Length)": 2.12929826578677,
+        "L (Avg System Length)": 2.9544407349183337
+      }
+    },
+    {
+      "replication_id": 20,
+      "seed": 61,
+      "kpi": {
+        "Wq (Avg Wait Time)": 2.678971735517857,
+        "W (Avg System Time)": 3.4978627633573174,
+        "Lq (Avg Queue Length)": 2.678971735517857,
+        "L (Avg System Length)": 3.4978627633573174
+      }
+    },
+    {
+      "replication_id": 21,
+      "seed": 62,
+      "kpi": {
+        "Wq (Avg Wait Time)": 6.507263152498761,
+        "W (Avg System Time)": 7.428668992906948,
+        "Lq (Avg Queue Length)": 6.507263152498761,
+        "L (Avg System Length)": 7.428668992906948
+      }
+    },
+    {
+      "replication_id": 22,
+      "seed": 63,
+      "kpi": {
+        "Wq (Avg Wait Time)": 3.1960427744795403,
+        "W (Avg System Time)": 3.9966585613076075,
+        "Lq (Avg Queue Length)": 3.1960427744795403,
+        "L (Avg System Length)": 3.9966585613076075
+      }
+    },
+    {
+      "replication_id": 23,
+      "seed": 64,
+      "kpi": {
+        "Wq (Avg Wait Time)": 2.792246503854151,
+        "W (Avg System Time)": 3.61086179923248,
+        "Lq (Avg Queue Length)": 2.792246503854151,
+        "L (Avg System Length)": 3.61086179923248
+      }
+    },
+    {
+      "replication_id": 24,
+      "seed": 65,
+      "kpi": {
+        "Wq (Avg Wait Time)": 2.749637820493009,
+        "W (Avg System Time)": 3.573137688102347,
+        "Lq (Avg Queue Length)": 2.749637820493009,
+        "L (Avg System Length)": 3.573137688102347
+      }
+    },
+    {
+      "replication_id": 25,
+      "seed": 66,
+      "kpi": {
+        "Wq (Avg Wait Time)": 3.1069300266285222,
+        "W (Avg System Time)": 3.91738679536634,
+        "Lq (Avg Queue Length)": 3.1069300266285222,
+        "L (Avg System Length)": 3.91738679536634
+      }
+    },
+    {
+      "replication_id": 26,
+      "seed": 67,
+      "kpi": {
+        "Wq (Avg Wait Time)": 3.153747699992405,
+        "W (Avg System Time)": 3.9966561464271506,
+        "Lq (Avg Queue Length)": 3.153747699992405,
+        "L (Avg System Length)": 3.9966561464271506
+      }
+    },
+    {
+      "replication_id": 27,
+      "seed": 68,
+      "kpi": {
+        "Wq (Avg Wait Time)": 2.7610553944030802,
+        "W (Avg System Time)": 3.5748367148169953,
+        "Lq (Avg Queue Length)": 2.7610553944030802,
+        "L (Avg System Length)": 3.5748367148169953
+      }
+    },
+    {
+      "replication_id": 28,
+      "seed": 69,
+      "kpi": {
+        "Wq (Avg Wait Time)": 7.266122980118049,
+        "W (Avg System Time)": 8.108110419637391,
+        "Lq (Avg Queue Length)": 7.266122980118049,
+        "L (Avg System Length)": 8.108110419637391
+      }
+    },
+    {
+      "replication_id": 29,
+      "seed": 70,
+      "kpi": {
+        "Wq (Avg Wait Time)": 4.52374405251671,
+        "W (Avg System Time)": 5.339110434544015,
+        "Lq (Avg Queue Length)": 4.52374405251671,
+        "L (Avg System Length)": 5.339110434544015
+      }
+    },
+    {
+      "replication_id": 30,
+      "seed": 71,
+      "kpi": {
+        "Wq (Avg Wait Time)": 5.023362326311814,
+        "W (Avg System Time)": 5.86025272003617,
+        "Lq (Avg Queue Length)": 5.023362326311814,
+        "L (Avg System Length)": 5.86025272003617
+      }
+    }
+  ],
+  "statistics": {
+    "mean": {
+      "Wq (Avg Wait Time)": 3.9119228580377876,
+      "W (Avg System Time)": 4.7538720658998725,
+      "Lq (Avg Queue Length)": 3.9119228580377876,
+      "L (Avg System Length)": 4.7538720658998725
+    },
+    "std": {
+      "Wq (Avg Wait Time)": 1.6543184387048149,
+      "W (Avg System Time)": 1.6772219384249205,
+      "Lq (Avg Queue Length)": 1.6543184387048149,
+      "L (Avg System Length)": 1.6772219384249205
+    },
+    "min": {
+      "Wq (Avg Wait Time)": 1.8992893748946722,
+      "W (Avg System Time)": 2.6925963368821844,
+      "Lq (Avg Queue Length)": 1.8992893748946722,
+      "L (Avg System Length)": 2.6925963368821844
+    },
+    "max": {
+      "Wq (Avg Wait Time)": 7.782066507512664,
+      "W (Avg System Time)": 8.718262218655003,
+      "Lq (Avg Queue Length)": 7.782066507512664,
+      "L (Avg System Length)": 8.718262218655003
+    },
+    "median": {
+      "Wq (Avg Wait Time)": 3.2962566571598666,
+      "W (Avg System Time)": 4.138216830155515,
+      "Lq (Avg Queue Length)": 3.2962566571598666,
+      "L (Avg System Length)": 4.138216830155515
+    }
+  }
+}
