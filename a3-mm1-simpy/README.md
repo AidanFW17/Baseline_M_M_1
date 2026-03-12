@@ -46,6 +46,20 @@ python replications.py
 
 Script `replications.py` akan menjalankan 30 replikasi dengan seed berbeda (42-71) dan menghasilkan analisis statistik lengkap.
 
+### Kalkulasi Confidence Interval
+```bash
+cd a3-mm1-simpy
+python confidence_interval.py
+```
+
+### Analisis Gap & Validasi Model
+```bash
+cd a3-mm1-simpy
+python gap_analysis.py
+```
+
+Script ini membandingkan hasil simulasi dengan nilai teoretis dan memvalidasi distribusi.
+
 ## Output
 
 ### Simulasi Tunggal
@@ -67,6 +81,9 @@ Semua hasil disimpan di folder `results/replications/`:
 7. **confidence_intervals.csv** - Tabel confidence intervals dengan detail kalkulasi
 8. **confidence_interval_report.txt** - Laporan lengkap metodologi dan hasil CI
 9. **ci_visualization.png** - Visualisasi CI dengan nilai teoretis
+10. **gap_analysis.csv** - Tabel analisis deviasi dan hypothesis testing
+11. **gap_analysis_report.txt** - Laporan lengkap refleksi dan identifikasi gap
+12. **gap_analysis_visualization.png** - Visualisasi gap analysis dan validasi distribusi
 
 ### Cara Menghitung Confidence Interval
 ```bash
@@ -192,6 +209,48 @@ Menggunakan t-distribution (n=30, df=29, t-critical=2.045):
 ### Interpretasi Hasil Replikasi
 
 Dari 30 replikasi dengan seed berbeda, diperoleh rata-rata waktu tunggu (Wq) sebesar 3.91 unit waktu dengan standar deviasi 1.65, menunjukkan variabilitas yang cukup signifikan antar replikasi. Nilai mean ini lebih mendekati nilai teoretis (4.17) dibandingkan hasil simulasi tunggal, membuktikan bahwa multiple replications memberikan estimasi yang lebih akurat. Standar deviasi yang relatif besar mengindikasikan bahwa performa sistem sangat sensitif terhadap pola kedatangan dan layanan yang random. Range nilai dari minimum 1.90 hingga maximum 7.78 menunjukkan bahwa dalam kondisi tertentu, sistem bisa sangat efisien atau sebaliknya sangat terbebani. Median yang lebih rendah dari mean (3.30 vs 3.91) mengindikasikan distribusi yang right-skewed, artinya ada beberapa replikasi dengan nilai ekstrem tinggi yang menarik rata-rata ke atas. Hasil ini menekankan pentingnya menjalankan multiple replications untuk mendapatkan gambaran yang komprehensif tentang performa sistem.
+
+## Refleksi & Identifikasi Gap
+
+### Analisis Deviasi
+
+| Metric | Theoretical | Observed | Deviation | p-value | Status |
+|--------|-------------|----------|-----------|---------|--------|
+| Wq | 4.1667 | 3.9119 | -6.11% | 0.406 | ✓ Valid |
+| W | 5.0000 | 4.7539 | -4.92% | 0.428 | ✓ Valid |
+| Lq | 4.1667 | 3.9119 | -6.11% | 0.406 | ✓ Valid |
+| L | 5.0000 | 4.7539 | -4.92% | 0.428 | ✓ Valid |
+
+### Validasi Distribusi
+
+**Interarrival Times (Exponential λ=1.0):**
+- Observed Mean: 0.9821 (Theoretical: 1.0000)
+- K-S Test p-value: 0.2754
+- Status: ✓ Sesuai dengan Exponential
+
+**Service Times (Exponential μ=1.2):**
+- Observed Mean: 0.8564 (Theoretical: 0.8333)
+- K-S Test p-value: 0.3253
+- Status: ✓ Sesuai dengan Exponential
+
+### Kesimpulan Gap Analysis
+
+✅ **MODEL VALID - Tidak ada revisi diperlukan**
+
+**Alasan:**
+1. Semua nilai teoretis berada dalam 95% Confidence Interval
+2. Tidak ada perbedaan signifikan secara statistik (semua p-value > 0.05)
+3. Distribusi kedatangan sesuai dengan Exponential(λ=1.0)
+4. Distribusi layanan sesuai dengan Exponential(μ=1.2)
+5. Deviasi < 10% untuk semua KPI (dalam batas wajar untuk simulasi stokastik)
+
+**Komponen Model yang Divalidasi:**
+- ✓ Distribusi Kedatangan: Exponential dengan rate λ=1.0
+- ✓ Distribusi Layanan: Exponential dengan rate μ=1.2
+- ✓ Logika Routing: Single server queue (M/M/1)
+- ✓ Perhitungan KPI: Sesuai dengan Little's Law
+
+Model simulasi ini dapat digunakan dengan confidence untuk analisis sistem antrian M/M/1.
 
 ## Penjelasan Kode
 
