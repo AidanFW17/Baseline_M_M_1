@@ -1,0 +1,24 @@
+============================================================
+KEY PERFORMANCE INDICATORS (KPI)
+Simulasi Antrian M/M/1
+============================================================
+
+Parameter Simulasi:
+  Arrival Rate (λ): 1.0
+  Service Rate (μ): 1.2
+  Utilization (ρ): 0.8333
+
+Hasil KPI:
+  Wq (Avg Wait Time)      : 7.7821
+  W  (Avg System Time)    : 8.7183
+  Lq (Avg Queue Length)   : 7.7821
+  L  (Avg System Length)  : 8.7183
+
+============================================================
+
+Nilai Teoretis (M/M/1 Formula):
+  Wq (theory): 4.1667
+  W  (theory): 5.0000
+  Lq (theory): 4.1667
+  L  (theory): 5.0000
+============================================================
